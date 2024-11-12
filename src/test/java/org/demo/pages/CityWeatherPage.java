@@ -11,7 +11,7 @@ public class CityWeatherPage extends BasePage {
     private final By hoursTab = By.xpath("//a[contains(@href, 'por_hora') and text()='Horas']");
 
     // Selector de la fila de las 19:00
-    private final By time19Row = By.cssSelector("i.gtm-city-hours-deskt-table-chevron-down-hour-7");
+    private final By time19Row = By.xpath("//p[@class='time' and text()='19:00']/following::i[1]");
 
     public CityWeatherPage(WebDriver driver) {
         super(driver);
