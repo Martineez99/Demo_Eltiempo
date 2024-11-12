@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test Suite de El Tiempo" parallel="tests" thread-count="2">
+
+    <!-- Definir las pruebas que quieres ejecutar -->
+    <test name="Test de Búsqueda y Captura de Pantalla">
+        <classes>
+            <!-- Clase de pruebas -->
+            <class name="org.demo.tests.Demo"/>
+            <!-- Agregar más clases de prueba si es necesario -->
+        </classes>
+    </test>
+
+</suite>
