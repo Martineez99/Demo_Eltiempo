@@ -2,11 +2,16 @@
 
 Este proyecto es una aplicación de automatización de pruebas usando **Selenium**, **TestNG** y **Java**, que interactúa con el sitio web **Eltiempo.es** para realizar diversas validaciones de la predicción del clima. Como resultado final guardara una captura de Las Rozas a las 19:00.
 
-## 🌟 Funcionalidades
+### 🌟 Descripción de las Pruebas Automatizadas
 
-- **Validaciones en la página de Eltiempo**:
-  - Verificación de la información mostrada en el sitio web.
-  - Automatización de pruebas en la interfaz de usuario.
+Este proyecto incluye una automatización que simula las siguientes acciones en la página [El Tiempo](https://www.eltiempo.es/):
+
+1. **Acceder a la página principal** de El Tiempo.
+2. **Buscar "Madrid"** en el cuadro de búsqueda y seleccionar **"Las Rozas de Madrid"**.
+3. **Acceder a la página del tiempo** y seleccionar la vista por horas.
+4. **Hacer scroll** hasta llegar a la hora **19:00** del día.
+5. **Hacer clic** en el desplegable de la fila de las 19:00.
+6. **Captura de pantalla** del resultado, que se guarda en `src/test/resources/screenshots`.
 
 ## 💻 Tecnologías Utilizadas
 
