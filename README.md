@@ -14,7 +14,7 @@ Este proyecto es una aplicación de automatización de pruebas usando **Selenium
 - **Selenium WebDriver**
 - **TestNG**
 - **WebDriverManager**
-- **Maven** (gestor de dependencias)
+- **Maven** 
 
 ## 📋 Requisitos
 
