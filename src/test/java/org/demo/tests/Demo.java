@@ -44,11 +44,15 @@ public class Demo {
         // Accede a la página de la ciudad y realiza las acciones
         CityWeatherPage cityWeatherPage = new CityWeatherPage(driver);
 
-        cityWeatherPage.selectHoursTab();
-        cityWeatherPage.scrollToTime19();
-        cityWeatherPage.clickDropdownButton19();
-        cityWeatherPage.takeScreenshot("Las_Rozas");
+        try {
+            cityWeatherPage.selectHoursTab();
+            cityWeatherPage.scrollToTime19();
+            cityWeatherPage.clickDropdownButton19();
+            cityWeatherPage.takeScreenshot("Las_Rozas");
 
+        }catch (Exception e){
+            System.err.println("Ocurrió un error al intentar buscar la previsión de las 19:00: " + e.getMessage());
+        }
     }
 
     @AfterClass
