@@ -2,16 +2,15 @@
 
 Este proyecto es una aplicación de automatización de pruebas usando **Selenium**, **TestNG** y **Java**, que interactúa con el sitio web **Eltiempo.es** para realizar diversas validaciones de la predicción del clima. Como resultado final guardara una captura de Las Rozas a las 19:00.
 
-### 🌟 Descripción de las Pruebas Automatizadas
+## 🌟 Funcionalidades
 
-Este proyecto incluye una automatización que simula las siguientes acciones en la página [El Tiempo](https://www.eltiempo.es/):
-
-1. **Acceder a la página principal** de El Tiempo.
-2. **Buscar "Madrid"** en el cuadro de búsqueda y seleccionar **"Las Rozas de Madrid"**.
-3. **Acceder a la página del tiempo** y seleccionar la vista por horas.
-4. **Hacer scroll** hasta llegar a la hora **19:00** del día.
-5. **Hacer clic** en el desplegable de la fila de las 19:00.
-6. **Captura de pantalla** del resultado, que se guarda en `src/test/resources/screenshots`.
+- **Validaciones en la página de Eltiempo**:
+  - Verificación de la información mostrada en el sitio web.
+  - Automatización de pruebas en la interfaz de usuario.
+  
+- **Pruebas de la API de Eltiempo**:
+    - Validación de las respuestas de la API.
+    - Uso de **Postman** para realizar solicitudes a la API y validar respuestas.
 
 ## 💻 Tecnologías Utilizadas
 
@@ -19,7 +18,9 @@ Este proyecto incluye una automatización que simula las siguientes acciones en 
 - **Selenium WebDriver**
 - **TestNG**
 - **WebDriverManager**
-- **Maven** 
+- **Maven** (gestor de dependencias)
+- **Postman** (para pruebas de API)
+- **Newman** (para ejecutar colecciones de Postman desde la línea de comandos)
 
 ## 📋 Requisitos
 
@@ -27,6 +28,8 @@ Para ejecutar el proyecto, necesitas tener instalados:
 
 - **Java 17+**
 - **Maven 3.8+**
+- **Newman 6.2+**
+- **Newman-reporter-htmlextra@1.23.1+**
 
 ## 🚀 Ejecución de Pruebas
 
@@ -38,4 +41,16 @@ Para ejecutar el proyecto, necesitas tener instalados:
 4. Ejecuta las pruebas utilizando Maven
    mvn test
 
+
+## 🚀 Ejecución de Pruebas API con Newman
+
+1. Asegurese de tener installado Newman y Newman-reporter-htmlextra:
+
+   - npm install -g newman
+   - npm install -g newman-reporter-htmlextra
+ 2. Utilice las colecciones y los enviroments de postman
+    - Colección: API_Eltiempo.postman_collection.json
+    - Entorno: Provincias.postman_environment.json
+3. Ejecute el comando para las pruebas:
+    - newman run API_Eltiempo.postman_collection.json -e Provincias.postman_environment.json -r htmlextra --reporter-htmlextra-export ./reportes/htmlextra_{{DATE:yyyyMMdd_HHmmss}}.html
 

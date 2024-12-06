@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "b9307ae4-a541-4c79-abba-8ff26c1ac49f",
+		"name": "API_Eltiempo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40255166"
+	},
+	"item": [
+		{
+			"name": "Informacion Nacional",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.el-tiempo.net/api/json/v2/home",
+					"protocol": "https",
+					"host": [
+						"www",
+						"el-tiempo",
+						"net"
+					],
+					"path": [
+						"api",
+						"json",
+						"v2",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista de provincias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.el-tiempo.net/api/json/v2/provincias",
+					"protocol": "https",
+					"host": [
+						"www",
+						"el-tiempo",
+						"net"
+					],
+					"path": [
+						"api",
+						"json",
+						"v2",
+						"provincias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Informacion geografica y meteorologica toledo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.el-tiempo.net/api/json/v2/provincias/45",
+					"protocol": "https",
+					"host": [
+						"www",
+						"el-tiempo",
+						"net"
+					],
+					"path": [
+						"api",
+						"json",
+						"v2",
+						"provincias",
+						"45"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Informacion geografica y meteorologica madrid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.el-tiempo.net/api/json/v2/provincias/28",
+					"protocol": "https",
+					"host": [
+						"www",
+						"el-tiempo",
+						"net"
+					],
+					"path": [
+						"api",
+						"json",
+						"v2",
+						"provincias",
+						"28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PrevisionMeteoroligica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains province\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.provincia.NOMBRE_PROVINCIA).to.eql(\"Madrid\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/provincias/{{province_id_madrid}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"provincias",
+						"{{province_id_madrid}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
